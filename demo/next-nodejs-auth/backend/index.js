@@ -106,59 +106,62 @@ router.get("/", (req, res, next) => {
   res.send("Respond without authentication");
 });
 
-  let students = {
+  let rooms = {
       list: [
-        { "id": 1, "name": "Siriluck","surname": "Raksawat","major": "COE" ,"GPA": 2.89 },
-        { "id": 2, "name": "Benjamas","surname": "Kaewsiri","major": "COE" ,"GPA": 2.15 }]
+        { "id": 1, "name": "Siriluck","surname": "Raksawat","checkin": "14/04/64" ,"duedate": "14/07/64" ,"number": "101"},
+        { "id": 2, "name": "Benjamas","surname": "Kaewsiri","checkin": "15/02/64" ,"duedate": "15/05/64" ,"number": "102"}
+      ]
     }
   
   
   router
-    .route("/students")
+    .route("/rooms")
     .get((req, res) => {
-      res.send(students);
+      res.send(rooms);
     })
     .post((req, res) => {
       console.log(req.body);
-      let newstudent = {};
-      newstudent.id = students.list.length ? students.list[students.list.length - 1].id + 1 : 1;
-      newstudent.name = req.body.name;
-      newstudent.surname= req.body.surname;
-      newstudent.major = req.body.major;
-      newstudent.GPA= req.body.GPA;
-      students = { list: [...students.list, newstudent] };
-      res.json(students);
+      let newroom = {};
+      newroom.id = rooms.list.length ? rooms.list[rooms.list.length - 1].id + 1 : 1;
+      newroom.name = req.body.name;
+      newroom.surname= req.body.surname;
+      newroom.checkin = req.body.checkin;
+      newroom.duedate = req.body.duedate;
+      newroom.number= req.body.number;
+      rooms = { list: [...rooms.list, newroom] };
+      res.json(rooms);
     });
   
   router
-    .route("/students/:studentid")
+    .route("/rooms/:roomid")
     .get((req, res) => {
-      let id = students.list.findIndex((item) => +item.id == +req.params.studentid)
-      res.json(students.list[id]);
+      let id = rooms.list.findIndex((item) => +item.id == +req.params.roomid)
+      res.json(rooms.list[id]);
     })
     .put((req, res) => {
-      let id = students.list.findIndex((item) => item.id == +req.params.studentid);
-      students.list[id].name = req.body.name;
-      students.list[id].surname = req.body.surname;
-      students.list[id].major = req.body.major;
-      students.list[id].GPA = req.body.GPA;
-      res.json(students.list);
+      let id = rooms.list.findIndex((item) => item.id == +req.params.roomid);
+      rooms.list[id].name = req.body.name;
+      rooms.list[id].surname = req.body.surname;
+      rooms.list[id].checkin = req.body.checkin;
+      rooms.list[id].duedate = req.body.duedate;
+      rooms.list[id].number = req.body.number;
+      res.json(rooms.list);
     })
     .delete((req, res) => {
-      students.list = students.list.filter((item) => +item.id !== +req.params.studentid);
-      res.json(students.list);
+      rooms.list = rooms.list.filter((item) => +item.id !== +req.params.roomid);
+      res.json(rooms.list);
     });
   
   
-  router.route("/purchase/:studentId")
+  router.route("/purchase/:roomId")
   .post((req,res) => {
-    let id = students.list.findIndex((item) => +item.id == +req.params.studentId)
+    let id = rooms.list.findIndex((item) => +item.id == +req.params.roomId)
     if (id == -1) {
-      res.json({message: "Student not found"})
+      res.json({message: "Not found"})
     }
     else {
-      students.list = students.list.filter((item) => +item.id !== +req.params.studentId);
-      res.json(students.list);
+      rooms.list = rooms.list.filter((item) => +item.id !== +req.params.roomId);
+      res.json(rooms.list);
     }
   })
 
