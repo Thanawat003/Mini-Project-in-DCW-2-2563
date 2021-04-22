@@ -74,13 +74,13 @@ router.get(
   }
 );
 /* GET user foo. */
-router.get(
+/*router.get(
   "/foo",
   passport.authenticate("jwt", { session: false }),
   (req, res, next) => {
       res.status(200).json({ message: "Foo" });
   }
-);
+);*/
 
 router.post("/register", async (req, res) => {
   try {
