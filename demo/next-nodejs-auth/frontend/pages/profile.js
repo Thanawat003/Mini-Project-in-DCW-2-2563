@@ -29,30 +29,34 @@ const Profile1 = ({ token }) => {
         }
 
     }
- 
+
     return (
         <Layout>
             <Head>
-                <title>User profile</title>
+                <title>Admin profile</title>
             </Head>
             <div className={styles.container}>
                 <Navbar />
-                <h1>User profile</h1>
-                <div>
-                    <b>Token:</b> {token.substring(0, 15)}... <br /><br />
-                    This route is protected by token, user is required to login first.
-                    <br/>
-                    Otherwise, it will be redirect to Login page
-                    <br/><br/>
-                    {JSON.stringify(user)}
-                </div>
+                <div className={styles.title2}>
+                    User profile </div><br />
+                    <img src="https://sv1.picz.in.th/images/2021/04/23/AjK5ge.jpg" 
+                    height ="400px"
+                    width ="400px"
+                    />
+            <div className={styles.title2}>Thanawat Rungrueang <br /></div>
+            <div className={styles.title1}>
+                5735512022</div>
+            <br />
+            <div className={styles.title3}>Admin</div>
+            <br />
+            <br /><br />
             </div>
-        </Layout>
+        </Layout >
     )
 }
 
-export default withAuth(Profile1)
+export default (Profile1)
 
-export function getServerSideProps({ req, res }) {
+/*export function getServerSideProps({ req, res }) {
     return { props: { token: req.cookies.token || "" } };
-}
+}*/

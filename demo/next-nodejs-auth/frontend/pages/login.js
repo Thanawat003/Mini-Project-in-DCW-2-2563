@@ -30,7 +30,7 @@ export default function Login({ token }) {
 
   const loginForm = () => (
     <div className={styles.gridContainer}>
-      <div><b>Username:</b></div>
+      <div className={styles.title1}><b>Username:</b></div>
       <div>
         <input
           type="text"
@@ -39,7 +39,7 @@ export default function Login({ token }) {
           onChange={(e) => setUsername(e.target.value)}
         />
       </div>
-      <div><b>Password:</b></div>
+      <div className={styles.title1}><b>Password:</b></div>
       <div>
         <input
           type="password"
@@ -57,7 +57,7 @@ export default function Login({ token }) {
         />
        
       </div> 
-      <div className={styles.text}><label><ins><i><b>Remember Me</b></i></ins></label></div>
+      <div className={styles.text}><label><ins><b>Remember Me</b></ins></label></div>
     </div>
   );
 
@@ -72,15 +72,13 @@ export default function Login({ token }) {
       </Head>
       <div className={styles.container}>
         <Navbar />
-        <h1>Login</h1>
-        <div>
-          <b>Token:</b> {token.substring(0, 15)}...
-          <button className={styles.btn1} onClick={copyText}> Copy token </button>
-        </div>
+        <div className={styles.title1}>
+        <h1>Login</h1></div>
         <br />
-        <div>Status: {status}</div>
+        <div className={styles.title1}>Status: {status}</div>
         <br />
-        {loginForm()}
+        <div className={styles.listItem}>
+        {loginForm()}</div>
         <div>
           <button className={styles.btn2} onClick={login}>Login</button>
         </div>

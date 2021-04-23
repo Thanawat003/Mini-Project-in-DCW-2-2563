@@ -109,7 +109,7 @@ const admin = ({ token }) => {
   return (
     <div className={styles.container}>
       <Navbar />
-      <h1><ins>Room Data Edit </ins></h1>
+      <div className={styles.title2}><ins>Room Data Edit </ins></div>
       <div className={styles.form_add}>
         <h2>Add Rooms</h2>
         Name:

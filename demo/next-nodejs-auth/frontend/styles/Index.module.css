@@ -1,21 +1,45 @@
 .container {
     width: 100%;
-    height: 100vh;
+    /* height: 100vh; */
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: antiquewhite;
+    background-image: url(background5.jpg);
+    background-attachment:scroll;
+    
+    
 }
-
+.title1 {
+    font-size: 20px;
+    margin-bottom: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+}
+.checkin {
+    color: rgb(0, 134, 0);
+}
+.checkout {
+    color: rgb(255, 0, 0);
+}
+.roomnum {
+    font-size: 25px;
+    color: rgb(235, 134, 2);
+}
+.name2 {
+    font-size: 25px;
+    color: rgb(255, 255, 255);
+}
 .title {
     font-size: 3rem;
-    margin-bottom: 30px;
-    padding-top: 60px;
-    padding-bottom: 40px;
+    margin-bottom: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     font-weight: bold;
-    color: green;
+    color: rgb(255, 255, 255);
 }
 
 .list {
@@ -27,12 +51,14 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width:auto;
+    width:200px;
     align-items: center;
     margin: 10px;
-    border: 4px solid blueviolet;
+    border: 4px solid rgb(22, 182, 129);
     padding: 2rem;
     border-radius: 5px;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
 }
 .listItem > div{
     margin: 5px 0px;
@@ -66,3 +92,10 @@
     border: 2px solid brown;
 }
 
+.btn11{
+    background-color: rgb(13, 177, 122);
+    color: #fff;
+    font-size: 1rem;
+    margin-top: 10px;
+    border: 2px solid brown;
+}

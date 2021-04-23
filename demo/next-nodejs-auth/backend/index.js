@@ -74,13 +74,13 @@ router.get(
   }
 );
 /* GET user foo. */
-/*router.get(
+router.get(
   "/foo",
   passport.authenticate("jwt", { session: false }),
   (req, res, next) => {
       res.status(200).json({ message: "Foo" });
   }
-);*/
+);
 
 router.post("/register", async (req, res) => {
   try {
@@ -109,7 +109,11 @@ router.get("/", (req, res, next) => {
   let rooms = {
       list: [
         { "id": 1, "name": "Siriluck","surname": "Raksawat","checkin": "14/04/64" ,"duedate": "14/07/64" ,"number": "101"},
-        { "id": 2, "name": "Benjamas","surname": "Kaewsiri","checkin": "15/02/64" ,"duedate": "15/05/64" ,"number": "102"}
+        { "id": 2, "name": "Benjamas","surname": "Kaewsiri","checkin": "15/02/64" ,"duedate": "15/05/64" ,"number": "102"},
+        { "id": 3, "name": "Phitpichai","surname": "Sakulsiri","checkin": "18/01/64" ,"duedate": "18/04/64" ,"number": "103"},
+        { "id": 4, "name": "Phatama","surname": "Sirichaiwong","checkin": "20/02/64" ,"duedate": "20/05/64" ,"number": "104"},
+        { "id": 5, "name": "Anuphong","surname": "Kaewkul","checkin": "1/08/64" ,"duedate": "1/08/64" ,"number": "105"},
+        { "id": 6, "name": "Suriya","surname": "Namatham","checkin": "3/07/64" ,"duedate": "3/07/64" ,"number": "106"},
       ]
     }
   

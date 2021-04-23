@@ -24,19 +24,11 @@ const index = () => {
       return data.list.map((item, index) => {
         return (
           <div className={styles.listItem} key={index}>
-            <div><b>Name:</b> {item.name}</div>
-            <div><b>Surname:</b> {item.surname}</div>
-             <div><b>CheckIn:</b> {item.checkin} </div>
-             <div><b>DueDate:</b> {item.duedate} </div>
-            <div><b>Roomnumber:</b> {item.number}</div>
-            
-            <div>
-            <button
-              className={styles.btn}
-              onClick={() => selStu(item.id)}
-            >
-              Select
-            </button></div>
+            <div className={styles.name2}>{item.name} {item.surname}</div>
+            <div className={styles.checkin}><b>CheckIn:</b><br/> {item.checkin} </div>
+            <div className={styles.checkout}><b>DueDate:</b><br/> {item.duedate} </div>
+            <div><b>Roomnumber:</b><br/></div> 
+            <div className={styles.roomnum}>{item.number}</div>
           </div>
         );
       });
@@ -51,11 +43,10 @@ const index = () => {
     </Head>
     <div className={styles.container}><Navbar />
       <div className={styles.title}>
-      <marquee bgcolor="#A9E0B8" direction="lefe" scrollamount="5" width="100%"><ins>Welcome to Rooms Data</ins></marquee></div>
+      <marquee bgcolor="#16B681" direction="lefe" scrollamount="5" width="100%"><ins>Welcome to Rooms Data</ins></marquee></div>
       <div className={styles.list}>
         {showRooms()}
-      </div>
-      
+      </div><br/><br/><br/>
     </div>
     </Layout>
   );
