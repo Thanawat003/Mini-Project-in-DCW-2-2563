@@ -34,9 +34,9 @@ const Profile1 = ({ token }) => {
         <Layout>
             <Head>
                 <title>Admin profile</title>
-            </Head>
+            </Head><Navbar />
             <div className={styles.container}>
-                <Navbar />
+                
                 <div className={styles.title2}>
                     User profile </div><br />
                     <img src="https://sv1.picz.in.th/images/2021/04/23/AjK5ge.jpg" 

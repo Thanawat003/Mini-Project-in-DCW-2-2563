@@ -108,12 +108,12 @@ router.get("/", (req, res, next) => {
 
   let rooms = {
       list: [
-        { "id": 1, "name": "Siriluck","surname": "Raksawat","checkin": "14/04/64" ,"duedate": "14/07/64" ,"number": "101"},
-        { "id": 2, "name": "Benjamas","surname": "Kaewsiri","checkin": "15/02/64" ,"duedate": "15/05/64" ,"number": "102"},
-        { "id": 3, "name": "Phitpichai","surname": "Sakulsiri","checkin": "18/01/64" ,"duedate": "18/04/64" ,"number": "103"},
-        { "id": 4, "name": "Phatama","surname": "Sirichaiwong","checkin": "20/02/64" ,"duedate": "20/05/64" ,"number": "104"},
-        { "id": 5, "name": "Anuphong","surname": "Kaewkul","checkin": "1/08/64" ,"duedate": "1/08/64" ,"number": "105"},
-        { "id": 6, "name": "Suriya","surname": "Namatham","checkin": "3/07/64" ,"duedate": "3/07/64" ,"number": "106"},
+        { "id": 1,"img":"https://cdn.renthub.in.th/images/uploaded/202006/20200605/apartment_pictures/normal/5f60de636bf987b171f6ff728dd4358b.jpg?1591326461", "name": "Siriluck","surname": "Raksawat","checkin": "14/04/64" ,"duedate": "14/07/64" ,"number": "101"},
+        { "id": 2,"img":"https://cdn.renthub.in.th/images/uploaded/202006/20200605/apartment_pictures/normal/5f60de636bf987b171f6ff728dd4358b.jpg?1591326461", "name": "Benjamas","surname": "Kaewsiri","checkin": "15/02/64" ,"duedate": "15/05/64" ,"number": "102"},
+        { "id": 3,"img":"https://cdn.renthub.in.th/images/uploaded/202006/20200605/apartment_pictures/normal/5f60de636bf987b171f6ff728dd4358b.jpg?1591326461", "name": "Phitpichai","surname": "Sakulsiri","checkin": "18/01/64" ,"duedate": "18/04/64" ,"number": "103"},
+        { "id": 4,"img":"https://cdn.renthub.in.th/images/uploaded/202006/20200605/apartment_pictures/normal/5f60de636bf987b171f6ff728dd4358b.jpg?1591326461", "name": "Phatama","surname": "Sirichaiwong","checkin": "20/02/64" ,"duedate": "20/05/64" ,"number": "104"},
+        { "id": 5,"img":"https://cdn.renthub.in.th/images/uploaded/202006/20200605/apartment_pictures/normal/5f60de636bf987b171f6ff728dd4358b.jpg?1591326461", "name": "Anuphong","surname": "Kaewkul","checkin": "1/08/64" ,"duedate": "1/08/64" ,"number": "105"},
+        { "id": 6,"img":"https://cdn.renthub.in.th/images/uploaded/202006/20200605/apartment_pictures/normal/5f60de636bf987b171f6ff728dd4358b.jpg?1591326461", "name": "Suriya","surname": "Namatham","checkin": "3/07/64" ,"duedate": "3/07/64" ,"number": "106"},
       ]
     }
   
@@ -132,6 +132,7 @@ router.get("/", (req, res, next) => {
       newroom.checkin = req.body.checkin;
       newroom.duedate = req.body.duedate;
       newroom.number= req.body.number;
+      newroom.img = req.body.img;
       rooms = { list: [...rooms.list, newroom] };
       res.json(rooms);
     });
@@ -149,6 +150,7 @@ router.get("/", (req, res, next) => {
       rooms.list[id].checkin = req.body.checkin;
       rooms.list[id].duedate = req.body.duedate;
       rooms.list[id].number = req.body.number;
+      rooms.list[id].img = req.body.img;
       res.json(rooms.list);
     })
     .delete((req, res) => {

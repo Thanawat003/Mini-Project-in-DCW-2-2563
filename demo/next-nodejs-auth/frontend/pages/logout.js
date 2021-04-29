@@ -24,12 +24,12 @@ export default function Logout({ token }) {
         <Layout>
             <Head>
                 <title>Logout Page</title>
-            </Head>
+            </Head> <Navbar />
             <div className={styles.container}>
-                <Navbar />
-                <h1>Logout</h1>
+                <div className={styles.title2}>
+                <h1>Logout</h1></div>
                 <div>
-                    <h2> {status}  </h2>
+                <div className={styles.title1}><h2> {status} </h2></div>
                 </div>
             </div>
         </Layout>

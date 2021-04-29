@@ -69,9 +69,9 @@ export default function Login({ token }) {
     <Layout>
       <Head>
         <title>Login Page</title>
-      </Head>
+      </Head><Navbar />
       <div className={styles.container}>
-        <Navbar />
+        
         <div className={styles.title1}>
         <h1>Login</h1></div>
         <br />

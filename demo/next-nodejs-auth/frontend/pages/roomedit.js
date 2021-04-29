@@ -10,7 +10,8 @@ const admin = ({ token }) => {
   const [name, setName] = useState("");
   const [surname, setSurname] = useState("");
   const [checkin, setCheckin] = useState("");
-  const [duedate, setDuedate] = useState(0);
+  const [duedate, setDuedate] = useState("");
+  const [number, setNumber] = useState("");
   const [room, setRoom] = useState({});
   useEffect(() => {
     getRooms();
@@ -74,11 +75,11 @@ const admin = ({ token }) => {
       return rooms.map((item, index) => {
         return (
           <div className={styles.listItem} key={index}>
-            <b>Name:</b> {item.name} <br />
-            <b>Surname:</b> {item.surname} <br />
-            <b>CheckIn:</b> {item.checkin} <br />
-            <b>DueDate:</b> {item.duedate} <br />
-            <b>Roomnumber:</b> {item.number}
+            <div className={styles.name2}><b>Name:</b> {item.name} <br /></div>
+            <div className={styles.name2}><b>Surname:</b> {item.surname} <br /></div>
+            <div className={styles.checkin}><b>CheckIn:</b> {item.checkin} <br /></div>
+            <div className={styles.checkout}><b>DueDate:</b> {item.duedate} <br /></div>
+            <div className={styles.roomnum}><b>Roomnumber:</b> {item.number}</div>
             <div className={styles.edit_button}>
               <button
                 className={styles.button_get}
@@ -106,10 +107,18 @@ const admin = ({ token }) => {
       return <p>Loading...</p>;
     }
   };
-  return (
+  return (<div> <Navbar />
     <div className={styles.container}>
-      <Navbar />
+     
       <div className={styles.title2}><ins>Room Data Edit </ins></div>
+      <div className={styles.listItem1}>
+      <div className={styles.roomselect }><b><i><ins>(selected room)</ins></i></b></div>
+      <div className={styles.name2}> 
+        <b><ins>Name:</ins></b><div className={styles.name}>{room.name}</div> 
+        <b><ins>Surname:</ins></b><div className={styles.name}>{room.surname}</div> 
+        <b>  Checkin:</b><div className={styles.checkin}>{room.checkin}</div> 
+        <b>  Duedate:</b><div className={styles.checkout}>{room.duedate}</div> 
+         <b>Roomnumber:</b><div className={styles.roomnum2}>{room.number}</div></div></div>
       <div className={styles.form_add}>
         <h2>Add Rooms</h2>
         Name:
@@ -151,8 +160,8 @@ const admin = ({ token }) => {
       </div>
 
       <div className={styles.list}>{showRooms()}</div>
-      <div className={styles.list1}><b><i><ins>(selected room)</ins></i></b> <b>  Name:</b>{room.name}<b>  Surname:</b>{room.surname} <b>  Checkin:</b>{room.checkin} <b>  Duedate:</b>{room.duedate}  <b>Roomnumber:</b>{room.number}</div>
-    </div>
+      
+    </div></div>
   );
 };
 export default withAuth(admin);

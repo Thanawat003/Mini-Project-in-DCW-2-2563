@@ -66,6 +66,7 @@
   margin: 20px;
   padding-bottom: 5px;
   flex-wrap: wrap;
+  color: rgb(255, 255, 255);
   width: 80vw;
 }
 .container {
@@ -92,19 +93,63 @@
 }
 .listItem {
   display: flex;
-  flex-direction: column;
-  margin: 20px;
-  padding: 10px;
-  border: 2px solid green;
-  font-size: 1.4rem;
-  text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    width:200px;
+    align-items: center;
+    margin: 10px;
+    border: 4px solid rgb(22, 182, 129);
+    padding: 2rem;
+    border-radius: 5px;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+}
+.listItem1 {
+  display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width:400px;
+    align-items: center;
+    margin: 10px;
+    border: 4px solid rgb(22, 182, 129);
+    padding: 2rem;
+    border-radius: 5px;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
 }
 .form_add {
   display: flex;
   flex-direction: column;
   margin: 15px;
   padding: 15px;
-  border: 2px solid green;
+  border: 2px solid  rgb(22, 182, 129);
   font-size: 1.4rem;
   text-align: center;
+  color: rgb(255, 255, 255);
+}
+.name2 {
+  font-size: 20px;
+  color: rgb(255, 255, 255);
+}
+.name {
+  font-size: 25px;
+  color: rgb(95, 158, 160);
+}
+.checkin {
+  color: rgb(0, 134, 0);
+}
+.checkout {
+  color: rgb(255, 0, 0);
+}
+.roomnum {
+  font-size: 20px;
+  color: rgb(235, 134, 2);
+}
+.roomnum2 {
+  font-size: 20px;
+  color: rgb(235, 134, 2);
+}
+.roomselect {
+  font-size: 18px;
+  color:  rgb(255, 0, 0);
 }
